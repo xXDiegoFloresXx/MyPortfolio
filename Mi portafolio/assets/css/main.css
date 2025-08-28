@@ -1947,19 +1947,33 @@ input, select, textarea {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* se adapta */
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+  padding: 1rem;
 }
 
 .skill-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
+.skill-item svg,
 .skill-item img {
-  margin-bottom: 0.5rem;
+  max-width: 64px;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+    gap: 0.5rem;
+  }
+
+  .skill-item svg,
+  .skill-item img {
+    max-width: 48px;
+  }
 }
 
 	ul.icons {
